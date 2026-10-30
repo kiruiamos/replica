@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Highland University – Practice Homepage</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;700&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4f7f5;--surface:#fff;--ink:#14221b;--muted:#53625a;--green:#1f4d3a;--green-2:#2d6b50;--gold:#c9962b;--line:#d8e2dc;--on-green:#fff;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1713;--surface:#17221c;--ink:#e8f0ec;--muted:#9fb1a7;--green:#0f2a20;--green-2:#3f8a68;--gold:#e0b04a;--line:#27372e}}
+:root[data-theme="dark"]{--bg:#0f1713;--surface:#17221c;--ink:#e8f0ec;--muted:#9fb1a7;--green:#0f2a20;--green-2:#3f8a68;--gold:#e0b04a;--line:#27372e}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.6 "Public Sans",system-ui,sans-serif}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.wrap{max-width:1160px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:"Source Serif 4",Georgia,serif;line-height:1.2;margin:0}
+h2{font-size:1.7rem;margin-bottom:1.1rem}
+.util{background:var(--green);color:var(--on-green);font-size:.85rem}
+.util .wrap{display:flex;gap:18px;justify-content:space-between;flex-wrap:wrap;padding-top:6px;padding-bottom:6px}
+.util nav{display:flex;gap:16px;flex-wrap:wrap}
+.util a{text-decoration:none;opacity:.92}.util a:hover{text-decoration:underline}
+header.main{background:var(--surface);border-bottom:3px solid var(--gold);position:sticky;top:0;z-index:5}
+header.main .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:12px;padding-bottom:12px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.crest{width:44px;height:44px;border-radius:50%;background:var(--green);display:grid;place-items:center;color:var(--gold);font-family:"Source Serif 4",serif;font-weight:700;font-size:1.3rem}
+.brand b{font-family:"Source Serif 4",serif;font-size:1.25rem;display:block;line-height:1.1}
+.brand span{font-size:.78rem;color:var(--muted)}
+nav.primary ul{list-style:none;display:flex;gap:4px;margin:0;padding:0}
+nav.primary a{display:block;padding:8px 12px;text-decoration:none;font-weight:500;border-radius:6px}
+nav.primary a:hover{background:var(--bg)}
+.menu-btn{display:none;background:none;border:1px solid var(--line);color:var(--ink);padding:8px 12px;border-radius:6px;font:inherit}
+.hero{background:var(--green);color:var(--on-green)}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;padding-top:48px;padding-bottom:48px;align-items:center}
+.hero h1{font-size:clamp(2rem,4.5vw,3.2rem)}
+.hero p{max-width:52ch;opacity:.92;margin:14px 0 22px}
+.btn{display:inline-block;background:var(--gold);color:#1b1405;padding:11px 20px;border-radius:6px;font-weight:700;text-decoration:none;margin-right:8px}
+.btn.alt{background:transparent;color:inherit;border:1.5px solid currentColor}
+.notices{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:10px;padding:18px}
+.tabs{display:flex;gap:6px;margin-bottom:12px}
+.tabs button{flex:1;background:transparent;border:1px solid rgba(255,255,255,.3);color:inherit;padding:6px;border-radius:6px;font:inherit;font-size:.85rem;cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--gold);color:#1b1405;border-color:var(--gold);font-weight:700}
+.notices h3{font-size:1.2rem;margin-bottom:6px}.notices p{margin:0 0 10px;font-size:.95rem;opacity:.95}
+section{padding:44px 0}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.tile{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--green-2);padding:14px;text-decoration:none;font-weight:500;border-radius:4px}
+.tile small{display:block;color:var(--muted);font-weight:400}
+.tile:hover{border-left-color:var(--gold)}
+.two{display:grid;grid-template-columns:1.6fr 1fr;gap:32px}
+.news{display:grid;gap:14px}
+.story{background:var(--surface);border:1px solid var(--line);padding:16px;border-radius:4px}
+.story time{font-size:.8rem;color:var(--muted)}.story h3{font-size:1.1rem;margin-top:4px}
+.board{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:6px 18px}
+.board h2{padding-top:14px;font-size:1.3rem}
+.board ol{margin:0 0 12px;padding-left:20px}.board li{padding:8px 0;border-bottom:1px solid var(--line)}.board li:last-child{border:0}
+.finder{background:var(--surface);border-block:1px solid var(--line)}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}
+.filters input,.filters select{padding:10px 12px;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:6px;font:inherit}
+.filters input{flex:1;min-width:200px}
+#results{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px;list-style:none;padding:0;margin:0}
+#results li{border:1px solid var(--line);border-radius:4px;padding:12px 14px;background:var(--bg)}
+#results small{color:var(--muted);display:block}
+.empty{color:var(--muted)}
+.schools{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+.schools a{background:var(--green);color:var(--on-green);padding:20px 16px;text-decoration:none;font-family:"Source Serif 4",serif;font-weight:600;border-radius:4px;border-bottom:4px solid var(--gold)}
+.schools a:hover{background:var(--green-2)}
+footer{background:var(--green);color:var(--on-green);padding:36px 0 28px;font-size:.92rem}
+footer .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px}
+footer h3{font-size:1.05rem;margin-bottom:8px;color:var(--gold)}
+footer ul{list-style:none;margin:0;padding:0}footer a{text-decoration:none;opacity:.92}footer a:hover{text-decoration:underline}
+.demo{background:#fff4d6;color:#4a3800;text-align:center;font-size:.85rem;padding:6px 12px}
+@media (max-width:860px){
+ .hero .wrap,.two{grid-template-columns:1fr}
+ .menu-btn{display:block}
+ nav.primary{display:none;position:absolute;left:0;right:0;top:100%;background:var(--surface);border-bottom:3px solid var(--gold)}
+ nav.primary.open{display:block}
+ nav.primary ul{flex-direction:column;padding:8px 20px}
+ header.main .wrap{position:relative}
+}
+</style>
+</head>
+<body>
+<div class="demo">Practice site with a fictional university. Not an official page; all names, dates and links are placeholders.</div>
+<div class="util"><div class="wrap">
+ <span>Admissions line: +254 700 000 000</span>
+ <nav aria-label="Quick access"><a href="#">Student portal</a><a href="#">E-learning</a><a href="#">Student mail</a><a href="#">Staff</a><a href="#">Downloads</a></nav>
+</div></div>
+
+<header class="main"><div class="wrap">
+ <a class="brand" href="#"><div class="crest" aria-hidden="true">H</div><div><b>Highland University</b><span>Knowledge for the Rift</span></div></a>
+ <button class="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
+ <nav class="primary" id="nav" aria-label="Main"><ul>
+  <li><a href="#about">About</a></li><li><a href="#admissions">Admissions</a></li><li><a href="#programmes">Programmes</a></li><li><a href="#schools">Schools</a></li><li><a href="#news">News</a></li><li><a href="#contact">Contact</a></li>
+ </ul></nav>
+</div></header>
+
+<main>
+<div class="hero" id="about"><div class="wrap">
+ <div>
+  <h1>Learn on the highlands. Build for the region.</h1>
+  <p>Highland University offers certificate, diploma, undergraduate and postgraduate programmes across eight schools, with campus and online study.</p>
+  <a class="btn" href="#admissions">How to apply</a><a class="btn alt" href="#programmes">Find a programme</a>
+ </div>
+ <div class="notices" aria-live="polite">
+  <div class="tabs" role="tablist" aria-label="Notices"></div>
+  <h3 id="n-title"></h3><p id="n-body"></p>
+  <a href="#" class="btn" style="margin:0">Read the notice</a>
+ </div>
+</div></div>
+
+<section id="admissions"><div class="wrap">
+ <h2>Quick services</h2>
+ <div class="tiles">
+  <a class="tile" href="#">Apply for admission<small>Undergraduate and postgraduate</small></a>
+  <a class="tile" href="#">Fee structures<small>By programme</small></a>
+  <a class="tile" href="#">Semester dates<small>Academic calendar</small></a>
+  <a class="tile" href="#">Hostels<small>Accredited housing</small></a>
+  <a class="tile" href="#">Library<small>Catalogue and e-resources</small></a>
+  <a class="tile" href="#">Clearance<small>Request online</small></a>
+ </div>
+</div></section>
+
+<section id="news" style="padding-top:0"><div class="wrap two">
+ <div>
+  <h2>Latest news</h2>
+  <div class="news">
+   <article class="story"><time>Oct 2026</time><h3>Research office joins regional workshop on management toolkits</h3></article>
+   <article class="story"><time>Sep 2026</time><h3>Biology students mark International Microorganisms Day</h3></article>
+   <article class="story"><time>Aug 2026</time><h3>Vice-Chancellor welcomes the new first-year cohort</h3></article>
+   <article class="story"><time>Jul 2026</time><h3>University signs partnership with the county government</h3></article>
+  </div>
+ </div>
+ <aside class="board" aria-labelledby="nb"><h2 id="nb">Noticeboard</h2>
+  <ol>
+   <li>Graduands: confirm the order of your names</li>
+   <li>Alumni champions: applications open</li>
+   <li>Skills training programme: enrol now</li>
+   <li>First-year fee payment guide</li>
+   <li>Student innovation challenge: call for ideas</li>
+  </ol>
+ </aside>
+</div></section>
+
+<section class="finder" id="programmes"><div class="wrap">
+ <h2>Course finder</h2>
+ <div class="filters">
+  <input id="q" type="search" placeholder="Search programmes, e.g. engineering" aria-label="Search programmes">
+  <select id="lvl" aria-label="Level"><option value="">All levels</option><option>Certificate</option><option>Diploma</option><option>Undergraduate</option><option>Masters</option></select>
+ </div>
+ <ul id="results"></ul>
+</div></section>
+
+<section id="schools"><div class="wrap">
+ <h2>Schools</h2>
+ <div class="schools">
+  <a href="#">Agriculture and Biotechnology</a><a href="#">Business and Economics</a><a href="#">Education</a><a href="#">Engineering</a>
+  <a href="#">Environmental Sciences</a><a href="#">Arts and Social Sciences</a><a href="#">Health Sciences</a><a href="#">Science</a>
+ </div>
+</div></section>
+</main>
+
+<footer id="contact"><div class="wrap">
+ <div><h3>Contact</h3><p>Highland University<br>P.O. Box 0000<br>Rift Valley, Kenya<br>info@example.ac.ke</p></div>
+ <div><h3>Quick links</h3><ul><li><a href="#">Admissions</a></li><li><a href="#">Downloads</a></li><li><a href="#">Library</a></li><li><a href="#">Research</a></li></ul></div>
+ <div><h3>Follow</h3><ul><li><a href="#">Facebook</a></li><li><a href="#">X</a></li><li><a href="#">Instagram</a></li><li><a href="#">YouTube</a></li></ul></div>
+</div></footer>
+
+<script>
+const notices=[
+ {t:"Graduation",h:"Graduation ceremony announced",b:"Graduands should confirm their details and collect gowns before the ceremony date."},
+ {t:"Admissions",h:"Admissions are open",b:"Apply for certificate, diploma, undergraduate and postgraduate programmes."},
+ {t:"Innovation",h:"Campus innovation challenge",b:"Students can pitch solutions to real campus problems and win seed funding."}
+];
+const tabs=document.querySelector(".tabs");
+function show(i){
+ [...tabs.children].forEach((b,j)=>b.setAttribute("aria-selected",j===i));
+ document.getElementById("n-title").textContent=notices[i].h;
+ document.getElementById("n-body").textContent=notices[i].b;
+}
+notices.forEach((n,i)=>{const b=document.createElement("button");b.role="tab";b.textContent=n.t;b.onclick=()=>show(i);tabs.appendChild(b)});
+show(0);
+
+const progs=[
+ ["BSc Computer Science","Undergraduate","School of Science"],["BEng Mechanical Engineering","Undergraduate","School of Engineering"],
+ ["BEd Science","Undergraduate","School of Education"],["BSc Agribusiness","Undergraduate","School of Agriculture"],
+ ["BCom (Online)","Undergraduate","School of Business"],["MBA","Masters","School of Business"],
+ ["MSc Environmental Science","Masters","School of Environmental Sciences"],["Diploma in ICT","Diploma","School of Science"],
+ ["Diploma in Community Health","Diploma","School of Health Sciences"],["Certificate in Entrepreneurship","Certificate","School of Business"]
+];
+const q=document.getElementById("q"),lvl=document.getElementById("lvl"),out=document.getElementById("results");
+function render(){
+ const s=q.value.trim().toLowerCase(),l=lvl.value;
+ const r=progs.filter(p=>(!l||p[1]===l)&&(!s||p.join(" ").toLowerCase().includes(s)));
+ out.innerHTML="";
+ if(!r.length){out.innerHTML='<li class="empty">No programmes match. Try a different word or level.</li>';return}
+ r.forEach(p=>{const li=document.createElement("li");li.innerHTML="<b></b><small></small>";li.firstChild.textContent=p[0];li.lastChild.textContent=p[1]+" · "+p[2];out.appendChild(li)});
+}
+q.oninput=render;lvl.onchange=render;render();
+
+const mb=document.querySelector(".menu-btn"),nav=document.getElementById("nav");
+mb.onclick=()=>{const o=nav.classList.toggle("open");mb.setAttribute("aria-expanded",o)};
+nav.addEventListener("click",e=>{if(e.target.tagName==="A"){nav.classList.remove("open");mb.setAttribute("aria-expanded",false)}});
+</script>
+</body>
+</html>
